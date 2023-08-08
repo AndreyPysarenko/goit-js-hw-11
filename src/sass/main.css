@@ -1,0 +1,106 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  color: #212121;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+p {
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.load-more {
+  display: none;
+}
+
+.search-form {
+  display: flex;
+  gap: 15px;
+  width: 600px;
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+input {
+  height: 40px;
+  flex-grow: 1;
+  padding-left: 15px;
+  border: 1px solid #303030;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  background-color: transparent;
+}
+input:focus {
+  outline: 0;
+  border-color: #404bbf;
+}
+
+.search-form button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #4d5ae5;
+  color: #ffffff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border: none;
+  border-radius: 4px;
+}
+.search-form button:hover, .search-form button:focus {
+  background-color: #404bbf;
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.gallery-card {
+  flex-basis: calc((100% - 60px) / 4);
+  max-width: 350px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
+.gallery-card:hover, .gallery-card:focus {
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+  transition-property: box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.gallery-card__img {
+  display: block;
+  width: 350px;
+  max-height: 200px;
+}
+
+.gallery-card__info {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  gap: 10px;
+  padding: 20px;
+}
+.gallery-card__info--item {
+  text-align: center;
+}/*# sourceMappingURL=main.css.map */
