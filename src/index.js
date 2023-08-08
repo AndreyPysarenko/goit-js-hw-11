@@ -23,31 +23,27 @@ let options = {
 let observer = new IntersectionObserver(scrollLoadMore, options);
 
 function scrollLoadMore(entries, observer) {
-  try {
-    entries.forEach(async entry => {
-      if (entry.isIntersecting) {
-        pixabayApiInstance.page += 1;
+  entries.forEach(async entry => {
+    if (entry.isIntersecting) {
+      pixabayApiInstance.page += 1;
 
-        const response = await pixabayApiInstance.fetchHits();
-        const arrayImages = response.data.hits;
+      const response = await pixabayApiInstance.fetchHits();
+      const arrayImages = response.data.hits;
 
-        refs.divGalleryContainer.insertAdjacentHTML(
-          'beforeend',
-          createMarkup(arrayImages)
+      refs.divGalleryContainer.insertAdjacentHTML(
+        'beforeend',
+        createMarkup(arrayImages)
+      );
+      lightbox.refresh();
+
+      if (arrayImages <= PER_PAGE * pixabayApiInstance.page) {
+        Notiflix.Notify.failure(
+          'We`re sorry, but you`ve reached the end of search results.'
         );
-        lightbox.refresh();
-
-        if (arrayImages <= PER_PAGE * pixabayApiInstance.page) {
-          Notiflix.Notify.failure(
-            'We`re sorry, but you`ve reached the end of search results.'
-          );
-          observer.unobserve(target);
-        }
+        observer.unobserve(target);
       }
-    });
-  } catch (error) {
-    console.log(error);
-  }
+    }
+  });
 }
 
 const handleSearchFormSubmit = async event => {
