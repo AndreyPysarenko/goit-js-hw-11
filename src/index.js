@@ -49,9 +49,11 @@ function scrollLoadMore(entries, observer) {
 const handleSearchFormSubmit = async event => {
   event.preventDefault();
 
-  const searchQuery = event.target.firstElementChild.value.trim();
+  refs.divGalleryContainer.innerHTML = '';
 
+  const searchQuery = event.target.firstElementChild.value.trim();
   pixabayApiInstance.query = searchQuery;
+  pixabayApiInstance.restPage();
 
   if (pixabayApiInstance.query === '') {
     return Notiflix.Notify.failure(

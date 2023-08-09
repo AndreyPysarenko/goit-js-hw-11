@@ -27,4 +27,8 @@ export class PixabayAPI {
     const response = await axios.get(`${this.#BASE_URL}?${searchParams}`);
     return response;
   }
+
+  restPage() {
+    this.page = 1;
+  }
 }
