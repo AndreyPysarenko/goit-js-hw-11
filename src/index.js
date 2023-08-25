@@ -46,7 +46,7 @@ function scrollLoadMore(entries, observer) {
   });
 }
 
-const handleSearchFormSubmit = async event => {
+async function handleSearchFormSubmit(event) {
   event.preventDefault();
 
   refs.divGalleryContainer.innerHTML = '';
