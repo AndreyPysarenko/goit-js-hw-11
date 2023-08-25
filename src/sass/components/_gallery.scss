@@ -8,8 +8,7 @@
   padding-right: 15px;
 }
 
-.gallery-card {
-  flex-basis: calc((100% - 60px) / 4);
+.gallery-card {  
   max-width: 350px;
   box-shadow: $box-shadow;
   border-radius: 10px;
